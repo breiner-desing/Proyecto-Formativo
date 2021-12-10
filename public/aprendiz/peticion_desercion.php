@@ -74,15 +74,6 @@ $consulta = mysqli_query($conex, "SELECT * FROM causa_desercion");
                     </div>
 
                     <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text">Causa de la Desercion</label>
-                        </div>
-                        <select class="custom-select" id="cau_des" name="cau_des">
-                            <option value="">Causa de Desercion</option>
-                            <?php while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                                <option value="<?php echo $row['cad_codigo'] ?>"><?php echo $row['cad_descripcion'] ?></option>
-                            <?php } ?>
-                        </select>
                     </div>
                     <br>
                     <input id="button" type="submit" value="Enviar Petición"></input>

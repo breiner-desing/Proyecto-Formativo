@@ -12,6 +12,7 @@
         <a href="regis.php">Registrar de Aprendices</a>
         <a href="regis_usuarios.php">Registro de Usarios</a>
         <a href="datos.php">Datos</a>
+        <a href="contrasena.php">contraseña</a>
         <a href="./partials/cerrar.php" class="btn btn-outline-danger ">Cerrar Sesion</a>
       </nav>
       <label for="btn-menu">✖️</label>

@@ -49,6 +49,7 @@ $numero3 = mysqli_query($conex, "SELECT * FROM desercion WHERE apr_id='$ide' AND
           <?php if (!mysqli_num_rows($numero2) > 0) { ?>
             <a href="./peticion_desercion.php">Pedir Desercion</a>
           <?php } ?>
+          <a href="contrasenia.php">Contraseña</a>
           <a href="php/cerrar.php" class="btn btn-outline-danger ">Cerrar Sesion</a>
         </nav>
         <label for="btn-menu">✖️</label>
@@ -128,6 +129,7 @@ $numero3 = mysqli_query($conex, "SELECT * FROM desercion WHERE apr_id='$ide' AND
               <td><?php echo $row['fic_numero'] ?></td>
               <td><?php echo $row['cad_descripcion'] ?></td>
               <td><?php echo $row['peticion'] ?></td>
+              <td> <a href="php/actualizar.php?id=<?php echo $row['apr_id'] ?>"></a> editar </td>
             </tr>
 
           <?php } ?>

@@ -11,6 +11,7 @@
             <a href="instructor.php">Instructor</a>
 			<a href="peticiones.php">Peticiones</a>
             <a href="desercion.php">Solicitud</a>
+            <a href="contrasena.php">contraseña</a>
             <a href="../director/partials/cerrar.php" class="btn btn-outline-danger ">Cerrar Sesion</a>
 		</nav>
 		<label for="btn-menu">✖️</label>
