@@ -5,11 +5,11 @@ let btn = document.getElementById('btn').addEventListener('click',function(e){
     console.log('click')
     
     let id = document.getElementById('id').value;
-    let causa = document.getElementById('causa').value;
-    let estado = document.getElementById('estado').value; 
+    let descripcion = document.getElementById('descripcion').value;
+    let sigla = document.getElementById('sigla').value; 
     let mensaje = document.getElementById('mensaje');
 
-    if (causa == '' || id ==''||estado == ''){
+    if (descripcion == '' || id ==''||sigla == ''){
         mensaje.innerHTML="<div id='error' class='alert alert-danger' role='alert'>completar campos</div>";
                     let animacion = function(){
                         let error = document.querySelector('#error');
@@ -23,8 +23,8 @@ let btn = document.getElementById('btn').addEventListener('click',function(e){
 
         let form = new FormData();
 
-        form.append("causa",causa);
-        form.append("estado",estado)
+        form.append("descripcion",descripcion);
+        form.append("sigla",sigla)
         form.append('id',id);
 
         let https = new XMLHttpRequest()
@@ -53,7 +53,7 @@ let btn = document.getElementById('btn').addEventListener('click',function(e){
 
         }
 
-        https.open("POST","editadocausa.php",true);
+        https.open("POST","editadoid.php",true);
 
         https.send(form);
     }

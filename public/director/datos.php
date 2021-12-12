@@ -83,7 +83,8 @@ if (isset($_SESSION['ROL_NAME'])) {
               $consulta = mysqli_query($con, "SELECT * FROM causa_desercion");
 
               while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                <li class="list-group-item eliminar">Causa: <?php echo $row['cad_descripcion'] ?> <br> <a href="partials/DropList.php?id=<?php echo $row['cad_codigo'] ?>">ELEMINAR</a></li>
+                <li class="list-group-item ">Causa: <?php echo $row['cad_descripcion'] ?>||Estado: <?php echo $row['cad_mat_estado'] ?> <br> <a class="eliminar" href="partials/DropList.php?id=<?php echo $row['cad_codigo'] ?>">ELEMINAR</a>
+              <a href="partials/editcausa.php?id=<?php echo $row['cad_codigo'] ?>">EDITAR</a></li>
               <?php } ?>
               <li class="list-group-item" id="mensaje2"></li>
               <li class="list-group-item">
@@ -111,8 +112,9 @@ if (isset($_SESSION['ROL_NAME'])) {
               $consulta = mysqli_query($con, "SELECT * FROM tipo_id");
 
               while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                <li class="list-group-item eliminar">Sigla: <?php echo $row['tii_sigla'] ?> || <?php echo $row['tii_descripcion'] ?> <br>
-                  <a href="partials/DropList3.php?id=<?php echo $row['tii_id'] ?>">ELIMINAR</a>
+                <li class="list-group-item ">Sigla: <?php echo $row['tii_sigla'] ?> || <?php echo $row['tii_descripcion'] ?> <br>
+                  <a class="eliminar" href="partials/DropList3.php?id=<?php echo $row['tii_id'] ?>">ELIMINAR</a>
+                  <a href="partials/editid.php?id=<?php echo $row['tii_id'] ?>">EDITAR</a>
                 </li>
               <?php } ?>
               <li id="mensaje3" class="list-group-item"></li>
@@ -139,8 +141,8 @@ if (isset($_SESSION['ROL_NAME'])) {
               $consulta = mysqli_query($con, "SELECT * FROM programa");
 
               while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                <li class="list-group-item eliminar">Descrpcion: <?php echo $row['pro_descripcion'] ?> || Estado: <?php echo $row['pro_estado'] ?>
-                  <a href="partials/DropList4.php?id=<?php echo $row['pro_codigo'] ?>">ELIMINAR</a>
+                <li class="list-group-item ">Descrpcion: <?php echo $row['pro_descripcion'] ?> || Estado: <?php echo $row['pro_estado'] ?>
+                  <a class="eliminar" href="partials/DropList4.php?id=<?php echo $row['pro_codigo'] ?>">ELIMINAR</a>||<a href="partials/editprograma.php?id=<?php echo $row['pro_codigo'] ?>">EDITAR</a>
                 </li>
               <?php } ?>
               <li class="list-group-item" id="mensaje4"></li>
@@ -169,8 +171,8 @@ if (isset($_SESSION['ROL_NAME'])) {
               $consulta = mysqli_query($con, "SELECT * FROM depto");
 
               while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                <li class="list-group-item eliminar">Codigo <?php echo $row['dep_codigo'] ?> || Departamento <?php echo $row['dep_nombre'] ?><br>
-                  <a href="partials/DropList5.php?id=<?php echo $row['dep_codigo'] ?>">ELIMINAR</a>
+                <li class="list-group-item ">Codigo <?php echo $row['dep_codigo'] ?> || Departamento <?php echo $row['dep_nombre'] ?><br>
+                  <a class="eliminar" href="partials/DropList5.php?id=<?php echo $row['dep_codigo'] ?>">ELIMINAR</a>||<a href="partials/editdep.php?id=<?php echo $row['dep_codigo'] ?>">EDITAR</a>
                 </li>
               <?php } ?>
               <li id="mensaje5" class="list-group-item"></li>
@@ -199,8 +201,9 @@ if (isset($_SESSION['ROL_NAME'])) {
               $consulta = mysqli_query($con, "SELECT * FROM ciudad");
 
               while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                <li class="list-group-item eliminar">Codigo: <?php echo $row['ciu_id'] ?> ciudad: <?php echo $row['ciu_nombre'] ?><br>
-                  <a href="partials/DropList6.php?id=<?php echo $row['ciu_id'] ?>">ELIMINAR</a>
+                <li class="list-group-item ">Codigo: <?php echo $row['ciu_id'] ?> ciudad: <?php echo $row['ciu_nombre'] ?><br>
+                  <a class="eliminar" href="partials/DropList6.php?id=<?php echo $row['ciu_id'] ?>">ELIMINAR</a>
+                  <a href="partials/editciudad.php?id=<?php echo $row['ciu_id'] ?>">EDITAR</a>
                 </li>
               <?php } ?>
               <li id="mensaje6" class="list-group-item"></li>
@@ -208,7 +211,7 @@ if (isset($_SESSION['ROL_NAME'])) {
                 <form action="" method="post">
                   <input type="number" id="postal" placeholder="Codigo">
                   <input type="text" id="ciudad" placeholder="Ciudad">
-                  <input type="text" id="dep" placeholder="Departamento">
+                  <input type="number" id="dep" placeholder="Departamento">
                   <input id="btn6" type="submit" value="Agregar">
                 </form>
               </li>
@@ -234,8 +237,8 @@ if (isset($_SESSION['ROL_NAME'])) {
               $consulta = mysqli_query($con, "SELECT * FROM ficha INNER JOIN programa ON ficha.pro_codigo=programa.pro_codigo");
 
               while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                <li class="list-group-item eliminar">FICHA: <?php echo $row['fic_numero'] ?> || PROGRAMA <?php echo $row['pro_descripcion'] ?><br>
-                  <a href="partials/DropList7.php?id=<?php echo $row['fic_numero'] ?>">ELIMINAR</a>
+                <li class="list-group-item ">FICHA: <?php echo $row['fic_numero'] ?> || PROGRAMA <?php echo $row['pro_descripcion'] ?><br>
+                  <a class="eliminar" href="partials/DropList7.php?id=<?php echo $row['fic_numero'] ?>">ELIMINAR</a>
                 </li>
               <?php } ?>
               <li id="mensaje7" class="list-group-item"></li>

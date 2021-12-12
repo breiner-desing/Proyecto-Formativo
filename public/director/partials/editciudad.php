@@ -3,11 +3,13 @@ require_once 'db.php';
 
 $id = $_GET['id'];
 
-$consulta = mysqli_query($con,"SELECT * FROM causa_desercion WHERE cad_codigo='$id' ");
+$consulta = mysqli_query($con,"SELECT * FROM ciudad WHERE ciu_id='$id' ");
 
 foreach($consulta as $key){
-    $consulta = $key['cad_descripcion'];
-    $consulta = $key['cad_mat_estado'];
+    $consulta = $key['ciu_id'];
+    $consulta = $key['ciu_nombre'];
+    $consulta = $key['dep_codigo'];
+    $consulta = $key['ciu_cant_habitantes'];
 }
 
 ?>
@@ -22,13 +24,15 @@ foreach($consulta as $key){
 </head>
 <body>
     <form action="" method="post">
+        <input id="idN" type="number" value="<?php echo $id ?>">
         <input id="id" type="hidden" value="<?php echo $id ?>">
-        <input  id="causa"  type="text" value="<?php echo $key['cad_descripcion']; ?>" placeholder="causa">
-        <input id="estado" value="<?php echo $key['cad_mat_estado']; ?>" type="text">
+        <input  id="ciudad"  type="text" value="<?php echo $key['ciu_nombre']; ?>" >
+        <input type="number" id="habitantes" value="<?php echo $key['ciu_cant_habitantes'];?>">
+        <input id="departamento" type="number" value="<?php echo $key['dep_codigo']; ?>">
         <input type="submit" id="btn" value="enviar">
 
     </form>
     <div id="mensaje"></div>
-    <script src="../js/causa.js"></script>
+    <script src="../js/ciudad.js"></script>
 </body>
 </htm>

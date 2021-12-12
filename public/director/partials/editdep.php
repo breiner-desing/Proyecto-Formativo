@@ -3,11 +3,10 @@ require_once 'db.php';
 
 $id = $_GET['id'];
 
-$consulta = mysqli_query($con,"SELECT * FROM causa_desercion WHERE cad_codigo='$id' ");
+$consulta = mysqli_query($con,"SELECT * FROM depto WHERE dep_codigo='$id' ");
 
 foreach($consulta as $key){
-    $consulta = $key['cad_descripcion'];
-    $consulta = $key['cad_mat_estado'];
+    $consulta = $key['dep_nombre'];
 }
 
 ?>
@@ -22,13 +21,13 @@ foreach($consulta as $key){
 </head>
 <body>
     <form action="" method="post">
+        <input id="idN" type="number" value="<?php echo $id ?>">
         <input id="id" type="hidden" value="<?php echo $id ?>">
-        <input  id="causa"  type="text" value="<?php echo $key['cad_descripcion']; ?>" placeholder="causa">
-        <input id="estado" value="<?php echo $key['cad_mat_estado']; ?>" type="text">
+        <input  id="departamento"  type="text" value="<?php echo $key['dep_nombre']; ?>" placeholder="">
         <input type="submit" id="btn" value="enviar">
 
     </form>
     <div id="mensaje"></div>
-    <script src="../js/causa.js"></script>
+    <script src="../js/dep.js"></script>
 </body>
 </htm>
