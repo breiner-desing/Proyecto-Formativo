@@ -70,6 +70,7 @@ function datos(e){
                     if (respuesta == 'bien'){
                         setTimeout(animacion, 3000);
                     }
+                    location.href='director.php';
                 
                  } 
                  else if (respuesta == 'error'){

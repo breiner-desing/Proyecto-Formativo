@@ -54,7 +54,11 @@ if (isset($_SESSION['ROL_NAME'])) {
               $consulta = mysqli_query($con, "SELECT * FROM rh");
 
               while ($row = mysqli_fetch_assoc($consulta)) { ?>
-                <li class="list-group-item eliminar">Tipo de rh: <?php echo $row['rh_descripcion'] ?> <br> <a href="partials/DropList2.php?id=<?php echo $row['rh_id'] ?>">ELIMINAR</a> </li>
+                <li class="list-group-item">Tipo de rh: <?php echo $row['rh_descripcion'] ?>
+                 <br> 
+                 <a class="eliminar" href="partials/DropList2.php?id=<?php echo $row['rh_id'] ?>">ELIMINAR |</a>
+                 <a  href="partials/editrh.php?id=<?php echo $row['rh_id'] ?>">| EDITAR</a>
+                </li>
               <?php } ?>
               <li class="list-group-item" id="mensaje"></li>
               <li class="list-group-item">

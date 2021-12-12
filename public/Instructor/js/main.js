@@ -69,6 +69,7 @@ function desertar(e){
                     let fic_num = document.querySelector('#fic_num').value='';
                     let causa = document.querySelector('#causa').value='';
                     setTimeout(animacion, 3000);
+                    location.href='instructor.php';
                     return false;
                 }
                 else if (respuesta == 'error'){

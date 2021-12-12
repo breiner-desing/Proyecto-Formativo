@@ -50,6 +50,7 @@ function usuario(e){
                         mensaje.removeChild(correcto);
                     }
                         setTimeout(animacion, 3000);
+                        location.href='director.php';
                 } 
 
                 else if (respuesta == 'error'){
