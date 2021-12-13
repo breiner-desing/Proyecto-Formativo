@@ -17,6 +17,7 @@ $_SESSION['apr_id'];
     <title>Contraseña</title>
 </head>
 <body>
+   <div class="container" class="container" style="opacity: .85; margin-top: 8px; padding: 50px 50px 50px 50px; rgba(255, 255, 255, 0.28); border-radius:10px; border: 1px solid rgba(0, 0, 0,0.25);">
     <form action="" method="post">
         <input type="hidden" id="id" value="<?php echo $_SESSION['apr_id']; ?>" >
         <input type="password" name="" id="contrasenia" placeholder="contraseña">
@@ -27,5 +28,6 @@ $_SESSION['apr_id'];
 
     <div id="mensaje"></div>
     <script src="js/password.js"></script>
+    </div>
 </body>
 </html>

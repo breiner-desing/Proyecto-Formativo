@@ -71,6 +71,7 @@ $numero3 = mysqli_query($conex, "SELECT * FROM desercion WHERE apr_id='$ide' AND
           <th scope="col">TELEFONO</th>
           <th scope="col">GENERO</th>
           <th scope="col">EDAD</th>
+          <th scope="col"> Editar </th>
         </tr>
       </thead>
       <tbody>
@@ -90,6 +91,7 @@ $numero3 = mysqli_query($conex, "SELECT * FROM desercion WHERE apr_id='$ide' AND
             <td><?php echo $datos["apr_telefono"] ?></td>
             <td><?php echo $datos["apr_genero"] ?></td>
             <td><?php echo $datos["apr_edad"] ?></td>
+            <td><a href="Panel_de_Edicion.php">Editar</a></td>
           </tr>
         <?php } ?>
       </tbody>
