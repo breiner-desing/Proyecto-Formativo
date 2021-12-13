@@ -32,7 +32,9 @@
     <title>Estudiante</title>
 </head>
 <body>
-
+<header style="display:inline-block; background: rgb(252, 149, 0, 0.80); width: 100%;">
+    <h3 style="display:inline-block;  padding: 25px 5px 15px 45px;">Sesión iniciada como: <?php echo $_SESSION['NOM_USU'], " ", $_SESSION['APE_USU'] ?></h3>
+  </header>
     <?php 
     
     $consulta = mysqli_query($con,"SELECT * FROM aprendiz INNER JOIN ciudad ON aprendiz.ciu_id=ciudad.ciu_id INNER JOIN tipo_id ON aprendiz.tii_id=tipo_id.tii_id INNER JOIN rh ON aprendiz.rh_id=rh.rh_id WHERE apr_id = '$id' ");
@@ -65,18 +67,19 @@
 
 <div class="container m-5">
     <div class="card">
-  <h5 class="card-header">Estudiante  <?php echo $key['apr_nombre']?></h5>
+  <h5 class="card-header">Estudiante:  <?php echo $key['apr_nombre'], "  ", $key['apr_apellido'] ?></h5>
   <div class="card-body">
       <div class="m-3">
          <?php  
           echo $bat['cad_descripcion']?>
       </div>
-    <form action="" method="post">
+    <form class="row" action="" method="post">
         <input type="hidden" name="id" id="id" value="<?php echo $bat['der_id']; ?>">
-        <input id="btn" class="btn btn-secondary m-2" type="submit" value="Aceptar">
+        <input id="btn" class=" col-3 m-3 btn btn-secondary" type="submit" value="Aceptar">
+        <a class="col-3 m-3 btn btn-secondary" href="DropDes.php?id=<?php echo $bat['der_id'] ?>">ELIMINAR SOLICITUD</a>
+    <button type="button" class="col-3 m-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">ver datos del estudiante</div>
     </form>
-    <a class="btn btn-secondary" href="DropDes.php?id=<?php echo $bat['der_id'] ?>">ELIMINAR SOLICITUD</a>
-    <button type="button" class="col-6 btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">ver datos del estudiante</div>
+    
 </div>
 </div>
 

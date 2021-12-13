@@ -52,7 +52,7 @@ $consulta = mysqli_query($conex, "SELECT * FROM causa_desercion");
         <h3 style="display:inline-block;  padding: 25px 5px 15px 45px;">Pedir desercion</h3>
     </header>
     <!-- Formulario de peticion -->
-    <div style="opacity: .85; margin-top: 50px; padding: 100px 100px 100px 100px; rgba(255, 255, 255, 0.28); border-radius:10px; border: 1px solid rgba(0, 0, 0,0.25);">
+    <div style="opacity: .85; margin: 50px 70px 50px 70px; padding: 50px 50px 50px 50px; rgba(255, 255, 255, 0.28); border-radius:10px; border: 1px solid rgba(0, 0, 0,0.25);">
         <div class="container" style="margin-right: -95px;">
             <div class="row row-cols-2">
                 <form method="POST">

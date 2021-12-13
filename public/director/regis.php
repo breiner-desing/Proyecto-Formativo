@@ -36,7 +36,7 @@ $consulta4 = mysqli_query($con, "SELECT * FROM tipo_id");
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style-css/menu.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- <link rel="stylesheet" href="../css/estilo.css"> -->
+ 
   <title>Registrar Aprendices</title>
 </head>
 
@@ -56,6 +56,7 @@ $consulta4 = mysqli_query($con, "SELECT * FROM tipo_id");
     <div style="justify-content: center;display: flex;flex-direction: row; height: 75vh;">
       <form method="post">
         <!-- identificacion -->
+        <div class="m-3">
         <div class="row">
           <div class="col-8 col-sm-6">
             <input class="form-control" name="id" type="number" id="id" placeholder="Identificacion">
@@ -76,10 +77,11 @@ $consulta4 = mysqli_query($con, "SELECT * FROM tipo_id");
 
           </div>
         </div>
-
+              </div>
         <!-- nombre -->
+        <div class="m-3">
         <div class="row">
-          <div class="col-8 col-sm-6">
+          <div class="col-4 col-sm-6">
             <input class="form-control" name="nombre" id="nombre" type="text" placeholder="Nombres">
           </div>
 
@@ -89,7 +91,9 @@ $consulta4 = mysqli_query($con, "SELECT * FROM tipo_id");
             <input class="form-control" name="apellido" id="apellido" type="text" placeholder="Apellidos">
           </div>
         </div>
+              </div>
         <!-- numero -->
+        <div class="m-3">
         <div class="row">
           <div class="col-8 col-sm-6">
             <input class="form-control" name="numero" id="numero" type="number" placeholder="Numero">
@@ -101,10 +105,11 @@ $consulta4 = mysqli_query($con, "SELECT * FROM tipo_id");
             <input class="form-control" name="edad" id="edad" type="number" placeholder="Edad">
           </div>
         </div>
-
+              </div>
         <!-- rh -->
+        <div class="m-3">
         <div class="row">
-          <div class="col-8 col-sm-6">
+          <div class="col-4 col-sm-6">
             <select class="form-select" name="tipoSangre" id="rh">
               <option value="">Tipo de Sangre</option>
               <?php
@@ -132,8 +137,9 @@ $consulta4 = mysqli_query($con, "SELECT * FROM tipo_id");
             </select>
           </div>
         </div>
-
+              </div>
         <!-- Genero -->
+        <div class="m-3">
         <div class="row">
           <div class="col-4 col-sm-6">
             <select class="form-select" id="Genero">
@@ -150,7 +156,7 @@ $consulta4 = mysqli_query($con, "SELECT * FROM tipo_id");
     </div>
     </form>
   </div>
-
+              </div>
 
   <script src="js/regis.js"></script>
   </div><br>

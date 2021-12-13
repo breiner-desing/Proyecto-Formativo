@@ -40,7 +40,7 @@ if (isset($_SESSION['ROL_NAME'])) {
   <?php
 
   //der_id, fic_numero, fic_numero, cad_descripcion, apr_nombre, apr_apellido, apr_id
-  $consulta = mysqli_query($con, "SELECT * FROM desercion INNER JOIN aprendiz ON desercion.apr_id=aprendiz.apr_id ");
+  $consulta = mysqli_query($con, "SELECT * FROM desercion INNER JOIN aprendiz ON desercion.apr_id=aprendiz.apr_id WHERE peticion='INSTRUCTOR' ");
   ?>
 
   <!-- hacer tabla bien chimba -->

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'db.php';
 
 $id = $_GET['id'];
@@ -22,6 +22,11 @@ $causa = mysqli_query($con, "SELECT * FROM causa_desercion");
     <title>desercion</title>
 </head>
 <body>
+<header style="display:inline-block; background: rgb(252, 149, 0, 0.80); width: 100%;">
+    <h3 style="display:inline-block;  padding: 25px 5px 15px 45px;">Sesión iniciada como: <?php echo $_SESSION['NOM_USU'], " ", $_SESSION['APE_USU'] ?></h3>
+  </header>
+  <div class="container" class="container" style="opacity: .85; margin-top: 50px; padding: 50px 50px 50px 50px; rgba(255, 255, 255, 0.28); border-radius:10px; border: 1px solid rgba(0, 0, 0,0.25);">
+   <h3 style="margin-bottom: 30px; margin-left: 20px;">Desertar estudiante</h3>
 <?php $fecha = date("y-m-d")  ?>
     <div class="container">
     <form action="" method="post">
@@ -48,5 +53,6 @@ $causa = mysqli_query($con, "SELECT * FROM causa_desercion");
     </div>
     <div id="mensaje"></div>
     <script src="../js/desercion.js"></script>
+            </div>
 </body>
 </html>

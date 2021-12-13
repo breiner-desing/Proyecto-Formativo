@@ -30,10 +30,11 @@ $ide = $_SESSION['apr_id'];
     <title>Document</title>
 </head>
 <body>
-<div class="container m-5">
-    <h3 align="center">Editar datos del Aprendiz</h3>
-  </div>
+<header style="display:inline-block; background: rgb(252, 149, 0, 0.80); width: 100%;">
+    <h3 style="display:inline-block;  padding: 25px 5px 15px 45px;">Sesión iniciada como: <?php echo $_SESSION['NOM_USU'], " ", $_SESSION['APE_USU'] ?></h3>
+  </header>
   <div class="container" class="container" style="opacity: .85; margin-top: 8px; padding: 50px 50px 50px 50px; rgba(255, 255, 255, 0.28); border-radius:10px; border: 1px solid rgba(0, 0, 0,0.25);">
+  <h3 style="margin-bottom: 30px; margin-left: 20px;">Editar datos del Aprendiz</h3>
   <table class="table" >
       <thead>
         <tr id="titulos" align="center" style="background-color: rgb(252, 149, 0 , 0.80);">
@@ -59,13 +60,13 @@ $ide = $_SESSION['apr_id'];
           <tr id="contenido" align="center" >
           <form action="php/actualizar.php" method="post">
             <input type="hidden" name="id" class="text-impu" value="<?php echo $datos["apr_id"] ?>">
-            <td><input type="text" name="idN" class="text-impu" value="<?php echo $datos["apr_id"] ?>"></td>
+            <td><?php echo $datos["apr_id"] ?></td>
             <td><input type="text" name="nombre" class="text-impu" value="<?php echo $datos["apr_nombre"] ?>"></td>
             <td><input type="text" name="apellido" class="text-impu" value="<?php echo $datos["apr_apellido"] ?>"></td>
             <td><input type="text" name="telefono" class="text-impu" value="<?php echo $datos["apr_telefono"] ?>"></td>
             <td><input type="text" name="genero" class="text-impu" value="<?php echo $datos["apr_genero"] ?>"></td>
             <td><input type="text" name="edad" class="text-impu" value="<?php echo $datos["apr_edad"] ?>"></td>
-            <td><input type="submit" value="jalemos"></td>
+            <td><input type="submit" value="Actualizar"></td>
             </form>
            </tr>
         <?php } ?>
