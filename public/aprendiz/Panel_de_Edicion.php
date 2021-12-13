@@ -34,7 +34,6 @@ $ide = $_SESSION['apr_id'];
     <h3 align="center">Editar datos del Aprendiz</h3>
   </div>
   <div class="container" class="container" style="opacity: .85; margin-top: 8px; padding: 50px 50px 50px 50px; rgba(255, 255, 255, 0.28); border-radius:10px; border: 1px solid rgba(0, 0, 0,0.25);">
-  <from action="php/actualizar.php" method="post">
   <table class="table" >
       <thead>
         <tr id="titulos" align="center" style="background-color: rgb(252, 149, 0 , 0.80);">
@@ -58,19 +57,20 @@ $ide = $_SESSION['apr_id'];
 
           <!-- Visualizacion de los datos -->
           <tr id="contenido" align="center" >
-            <td><input type="text" class="text-impu" value="<?php echo $datos["apr_id"] ?>"></td>
-            <td><input type="text" class="text-impu" value="<?php echo $datos["apr_nombre"] ?>"></td>
-            <td><input type="text" class="text-impu" value="<?php echo $datos["apr_apellido"] ?>"></td>
-            <td><input type="text" class="text-impu" value="<?php echo $datos["apr_telefono"] ?>"></td>
-            <td><input type="text" class="text-impu" value="<?php echo $datos["apr_genero"] ?>"></td>
-            <td><input type="text" class="text-impu" value="<?php echo $datos["apr_edad"] ?>"></td>
-            <td><a href="php/actualizar.php ?apr_id=<?php echo $row['apr_id'] ?>"><button type="button">Actualizar</button></a></td>
+          <form action="php/actualizar.php" method="post">
+            <input type="hidden" name="id" class="text-impu" value="<?php echo $datos["apr_id"] ?>">
+            <td><input type="text" name="idN" class="text-impu" value="<?php echo $datos["apr_id"] ?>"></td>
+            <td><input type="text" name="nombre" class="text-impu" value="<?php echo $datos["apr_nombre"] ?>"></td>
+            <td><input type="text" name="apellido" class="text-impu" value="<?php echo $datos["apr_apellido"] ?>"></td>
+            <td><input type="text" name="telefono" class="text-impu" value="<?php echo $datos["apr_telefono"] ?>"></td>
+            <td><input type="text" name="genero" class="text-impu" value="<?php echo $datos["apr_genero"] ?>"></td>
+            <td><input type="text" name="edad" class="text-impu" value="<?php echo $datos["apr_edad"] ?>"></td>
+            <td><input type="submit" value="jalemos"></td>
+            </form>
            </tr>
         <?php } ?>
       </tbody>
     </table>
-    </from> 
   </div>
 </body>
 </html>
-

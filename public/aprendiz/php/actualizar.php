@@ -1,26 +1,22 @@
 <?php
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db ='bddesercion';
 
-$con = mysqli_connect($host,$user,$pass,$db);
+include '../../partials/databases.php';
 
-$id=$_POST['apr_id'];
-$nombre=$_POST['apr_nombre'];
-$apellido=$_POST['apr_apellido'];
-$telefono=$_POST['apr_telefono'];
-$genero=$_POST['apr_genero'];
-$edad=$_POST['apr_edad'];
+$idN=$_POST['idN'];
+$id=$_POST['id'];
+$nombre=$_POST['nombre'];
+$apellido=$_POST['apellido'];
+$telefono=$_POST['telefono'];
+$genero=$_POST['genero'];
+$edad=$_POST['edad'];
 
 
-$actualizar = "UPDATE aprendiz  SET apr_id='$id',apr_nombre='$nombre', apr_apellido='$apellido', apr_telefono='$telefono', apr_genero='$genero', apr_edad='$edad' WHERE apr_id='$id'";
+$actualizar = "UPDATE aprendiz  SET apr_id='$idN',apr_nombre='$nombre', apr_apellido='$apellido', apr_telefono='$telefono', apr_genero='$genero', apr_edad='$edad' WHERE apr_id='$id'";
 
-$resultado=mysqli_query($con, $actualizar);
+$resultado=mysqli_query($conex, $actualizar);
 
 if ($resultado){
-    include "aprendiz.php";
+    echo "<script>location.href = '../aprendiz.php'</script>";
 }else{
     echo "no se ah podido actualizar";
 }
-?>
